@@ -1,0 +1,5 @@
+
+# Ignore all_files
+.AWS\Project1\all_files
+# Ignore de_project2
+.AWS\Project1\de_project2
