@@ -44,8 +44,8 @@ mandatory_columns = ["customer_id","store_id","product_name","sales_date","sales
 
 
 # File Download location
-local_directory = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\Project1\\all_files\\file_from_s3\\" 
-customer_data_mart_local_file = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\Project1\\all_files\\customer_data_mart\\"
-sales_team_data_mart_local_file = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\Project1\\all_files\\sales_team_data_mart\\"
-sales_team_data_mart_partitioned_local_file = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\Project1\\all_files\\sales_partition_data\\"
-error_folder_path_local = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\Project1\\all_files\\error_files\\"
+local_directory = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\all_files\\file_from_s3\\" 
+customer_data_mart_local_file = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\all_files\\customer_data_mart\\"
+sales_team_data_mart_local_file = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\all_files\\sales_team_data_mart\\"
+sales_team_data_mart_partitioned_local_file = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\all_files\\sales_partition_data\\"
+error_folder_path_local = "D:\\git_repo\\Data-Engineering-Projects\\AWS\\all_files\\error_files\\"

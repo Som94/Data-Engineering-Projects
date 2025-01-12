@@ -6,16 +6,14 @@ from pathlib import Path
 from pyspark.sql.types import StructField, IntegerType, StructType, StringType, DateType, FloatType
 from pyspark.sql.functions import concat_ws, lit, expr
 
-from src.main.delete.local_file_delete import delete_local_file
-from src.main.transformations.jobs.sales_mart_sql_transform_write import sales_mart_calculation_table_write
-
-
 # Add the project root to sys.path
 project_root = Path(__file__).resolve().parents[4]
 print(project_root)
 sys.path.append(str(project_root))
 
 from resources.dev import config
+from src.main.delete.local_file_delete import delete_local_file
+from src.main.transformations.jobs.sales_mart_sql_transform_write import sales_mart_calculation_table_write
 from src.main.transformations.jobs.customer_mart_sql_tranform_write import customer_mart_calculation_table_write
 from src.main.upload.upload_to_s3 import UploadToS3
 from src.main.write.parquet_writer import ParquetWriter
