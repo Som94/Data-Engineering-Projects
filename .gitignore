@@ -1,5 +1,5 @@
+# Ignore all files in the directory 'all_files'
+AWS/Project1/all_files/
 
-# Ignore all_files
-.AWS\Project1\all_files
-# Ignore de_project2
-.AWS\Project1\de_project2
+# Ignore everything in the directory 'de_project2'
+AWS/Project1/de_project2/
