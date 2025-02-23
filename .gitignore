@@ -1,14 +1,10 @@
 # Ignore all files in the directory 'all_files'
 AWS/all_files/
-
 AWS/Architecture Diagram/
 
 GCP/Architecture/
-
 GCP/BQ Oparations/.env
 GCP/BQ Oparations/.venv/
-
 GCP/DataFlow Insight Hub/.env
-
 GCP/kafka-stock-market-project/.env
 GCP/kafka-stock-market-project/.venv/
