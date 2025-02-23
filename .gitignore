@@ -8,3 +8,4 @@ GCP/BQ Oparations/.venv/
 GCP/DataFlow Insight Hub/.env
 GCP/kafka-stock-market-project/.env
 GCP/kafka-stock-market-project/.venv/
+.env
