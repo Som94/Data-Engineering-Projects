@@ -1,0 +1,10 @@
+storage:
+  bronze_path: /mnt/dev/bronze/energy
+  silver_path: /mnt/dev/silver/energy
+  gold_path: /mnt/dev/gold/energy
+
+eventhub:
+  connection_string: "<secret>"
+
+api:
+  weather_url: "https://api.weather.com/data"

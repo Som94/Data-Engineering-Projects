@@ -1,4 +1,3 @@
-import os
 
 key = "my_aws_de_project1"
 iv = "aws_de_project_1"

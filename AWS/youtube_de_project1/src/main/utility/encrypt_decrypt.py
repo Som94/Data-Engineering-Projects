@@ -1,8 +1,11 @@
 import base64
+import sys
+
 from Cryptodome.Cipher import AES
 from Cryptodome.Protocol.KDF import PBKDF2
-import os, sys
+
 from resources.dev import config
+
 # from logging_config import logger
 
 try:
@@ -11,7 +14,7 @@ try:
     salt = config.salt
 
     if not (key and iv and salt):
-        raise Exception(F"Error while fetching details for key/iv/salt")
+        raise Exception("Error while fetching details for key/iv/salt")
 except Exception as e:
     print(f"Error occured. Details : {e}")
     # logger.error("Error occurred. Details: %s", e)

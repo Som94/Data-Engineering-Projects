@@ -1,33 +1,45 @@
-from ctypes import Structure
 import datetime
 import shutil
 import sys
 from pathlib import Path
-from pyspark.sql.types import StructField, IntegerType, StructType, StringType, DateType, FloatType
-from pyspark.sql.functions import concat_ws, lit, expr
+
+from pyspark.sql.functions import concat_ws, expr, lit
+from pyspark.sql.types import (
+    DateType,
+    FloatType,
+    IntegerType,
+    StringType,
+    StructField,
+    StructType,
+)
 
 # Add the project root to sys.path
 project_root = Path(__file__).resolve().parents[4]
 print(project_root)
 sys.path.append(str(project_root))
 
+import os
+
 from resources.dev import config
 from src.main.delete.local_file_delete import delete_local_file
-from src.main.transformations.jobs.sales_mart_sql_transform_write import sales_mart_calculation_table_write
-from src.main.transformations.jobs.customer_mart_sql_tranform_write import customer_mart_calculation_table_write
-from src.main.upload.upload_to_s3 import UploadToS3
-from src.main.write.parquet_writer import ParquetWriter
-from src.main.transformations.jobs.dimension_tables_join import dimesions_table_join
-from src.main.read.database_read import DatabaseReader
-from src.main.move.move_files import move_s3_to_s3
-from src.main.utility.spark_session import spark_session
 from src.main.download.aws_file_download import S3FileDownloader
+from src.main.move.move_files import move_s3_to_s3
+from src.main.read.aws_read import *
+from src.main.read.database_read import DatabaseReader
+from src.main.transformations.jobs.customer_mart_sql_tranform_write import (
+    customer_mart_calculation_table_write,
+)
+from src.main.transformations.jobs.dimension_tables_join import dimesions_table_join
+from src.main.transformations.jobs.sales_mart_sql_transform_write import (
+    sales_mart_calculation_table_write,
+)
+from src.main.upload.upload_to_s3 import UploadToS3
 from src.main.utility.encrypt_decrypt import *
 from src.main.utility.logging_config import *
-from src.main.utility.s3_client_object import *
-import os
 from src.main.utility.my_sql_session import get_mysql_connection
-from src.main.read.aws_read import *
+from src.main.utility.s3_client_object import *
+from src.main.utility.spark_session import spark_session
+from src.main.write.parquet_writer import ParquetWriter
 
 aws_access_key = config.aws_access_key
 aws_secret_key = config.aws_secret_key
@@ -143,9 +155,9 @@ for data in csv_files:
         logger.info(f"No missing column for the {data}")
         correct_files.append(data)
 
-logger.info(f"*************** List of correct files ****************")
-logger.info(f"*************** List of error files ****************")
-logger.info(f"*************** Moving error data to error directory if any ****************")
+logger.info("*************** List of correct files ****************")
+logger.info("*************** List of error files ****************")
+logger.info("*************** Moving error data to error directory if any ****************")
 
 
 # Move data to error directory on local
@@ -167,7 +179,7 @@ if error_files:
             message = move_s3_to_s3(s3_client, config.bucket_name, source_prefix,destination_prefix, file_name)
             logger.info(f"message = {message}")
 else:
-    logger.info(f"************ There is no error files.. ************")
+    logger.info("************ There is no error files.. ************")
 
 
 # Additional columns needs to be taken care of
@@ -176,7 +188,7 @@ else:
 #Before running the process
 # stage table need to be updated with the status as Active(A) or Inactive(I)
 
-logger.info(f"************** Updating the product staging table that we have started the process ************")
+logger.info("************** Updating the product staging table that we have started the process ************")
 insert_statements = []
 db_name = config.database_name
 current_date = datetime.datetime.now()
@@ -197,7 +209,7 @@ if correct_files:
         insert_statements.append(statements)
     
     logger.info(f"Insert statement created for staging table ===> {insert_statements}")
-    logger.info(f"******** Connecting with MySQL server *********")
+    logger.info("******** Connecting with MySQL server *********")
 
     connection = get_mysql_connection()
     cursor = connection.cursor()
@@ -327,7 +339,7 @@ parquet_writer.dataframe_writer(final_customer_data_mart_df, config.customer_dat
 logger.info(f"************** Customer data written to local disk at {config.customer_data_mart_local_file} *****************")
 
 # MOve data on s3 bucket for customer_data_mart
-logger.info(f"************** Data movement from local to s3 for customer data mart *****************")
+logger.info("************** Data movement from local to s3 for customer data mart *****************")
 s3_uploader = UploadToS3(s3_client)
 s3_directory = config.s3_customer_datamart_directory
 message = s3_uploader.upload_to_s3(s3_directory, config.bucket_name, config.customer_data_mart_local_file)
@@ -359,7 +371,7 @@ parquet_writer.dataframe_writer(final_sales_team_data_mart_df, config.sales_team
 logger.info(f"************** Sales team data written to local disk at {config.sales_team_data_mart_local_file} *****************")
 
 # MOve data on s3 bucket for sales tema data mart
-logger.info(f"************** Data movement from local to s3 for sales team data mart *****************")
+logger.info("************** Data movement from local to s3 for sales team data mart *****************")
 s3_directory = config.s3_sales_datamart_directory
 message = s3_uploader.upload_to_s3(s3_directory, config.bucket_name, config.sales_team_data_mart_local_file)
 logger.info(f"{message}")
@@ -412,22 +424,22 @@ destination_prefix = config.s3_processed_directory
 message = move_s3_to_s3(s3_client, config.bucket_name, source_prefix, destination_prefix)
 logger.info(f"{message}")
 
-logger.info(f"*********** Delete sales data from local *************")
+logger.info("*********** Delete sales data from local *************")
 delete_local_file(config.local_directory)
-logger.info(f"*********** Deleted sales data from local *************")
+logger.info("*********** Deleted sales data from local *************")
 
-logger.info(f"*********** Delete customer_data_mart_local_file *************")
+logger.info("*********** Delete customer_data_mart_local_file *************")
 delete_local_file(config.customer_data_mart_local_file)
-logger.info(f"*********** Deleted customer_data_mart_local_file *************")
+logger.info("*********** Deleted customer_data_mart_local_file *************")
 
 
-logger.info(f"*********** Delete sales_team_data_mart_local_file *************")
+logger.info("*********** Delete sales_team_data_mart_local_file *************")
 delete_local_file(config.sales_team_data_mart_local_file)
-logger.info(f"*********** Deleted sales_team_data_mart_local_file *************")
+logger.info("*********** Deleted sales_team_data_mart_local_file *************")
 
-logger.info(f"*********** Delete sales_team_data_mart_partitioned_local_file *************")
+logger.info("*********** Delete sales_team_data_mart_partitioned_local_file *************")
 delete_local_file(config.sales_team_data_mart_partitioned_local_file)
-logger.info(f"*********** Deleted sales_team_data_mart_partitioned_local_file *************")
+logger.info("*********** Deleted sales_team_data_mart_partitioned_local_file *************")
 
 
 update_statements = []
@@ -441,10 +453,10 @@ if correct_files:
             '''
         update_statements.append(statements)
     logger.info(f"Update statement created for staging table --- {update_statements}")
-    logger.info(f"************** Connecting with MySQL server *************")
+    logger.info("************** Connecting with MySQL server *************")
     connection = get_mysql_connection()
     cursor = connection.cursor()
-    logger.info(f"************** Successfully Connected with MySQL server *************")
+    logger.info("************** Successfully Connected with MySQL server *************")
 
     for statement in update_statements:
         cursor.execute(statement)
@@ -452,7 +464,7 @@ if correct_files:
     cursor.close()
     connection.close()
 else:
-    logger.info(f"************** There is some error in process in between *************")
+    logger.info("************** There is some error in process in between *************")
     sys.exit()
 
 input("Press enter to terminate")

@@ -1,0 +1,6 @@
+gcp:
+  project_id: "your-gcp-project"
+  bucket_name: "your-gcs-bucket"
+  pubsub_topic: "projects/your-gcp-project/topics/your-topic"
+  bigquery_dataset: "your_dataset"
+  bigquery_table: "your_table"
