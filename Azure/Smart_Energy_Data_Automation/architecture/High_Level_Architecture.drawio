@@ -1,0 +1,171 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="0fRThWxW74gH0Szqsk6Q">
+    <mxGraphModel dx="2076" dy="1471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="StifRaOV8h67si_LvdgK-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;SMART ENERGY DEMAND ANALYTICS&lt;br/&gt;High Level Architecture (HLD)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="470" x="380" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="" vertex="1">
+          <mxGeometry height="270" width="500" x="360" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;SOURCE SYSTEMS&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="530" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;font&gt;Customer DB&lt;br&gt;Azure SQL&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="100" x="410" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="&lt;font&gt;Billing DB&lt;/font&gt;&lt;div&gt;&lt;font&gt;&amp;nbsp;Azure SQL&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="100" x="565" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-6" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Smart Meter&lt;div&gt;REST API&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="720" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-7" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Region CSV" vertex="1">
+          <mxGeometry height="80" width="80" x="720" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-8" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Tariff CSV" vertex="1">
+          <mxGeometry height="80" width="80" x="580" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-9" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="Weather API" vertex="1">
+          <mxGeometry height="80" width="80" x="420" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-12" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Azure Data Lake Storage Gen2&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;(Storage Layer)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="390" x="415" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-13" parent="StifRaOV8h67si_LvdgK-12" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt; • Bronze                                         &amp;nbsp;&lt;br&gt;• Silver&amp;nbsp;&lt;br&gt;• Gold&amp;nbsp;&lt;br&gt;• Metadata&amp;nbsp;&lt;br&gt;• Archive &lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;• Logs&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;• Temp&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="280" x="55" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-16" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="StifRaOV8h67si_LvdgK-18" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="610" y="520" as="sourcePoint" />
+            <mxPoint x="510" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-18" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;Azure Data Factory (ADF)&lt;/b&gt;&lt;div&gt;(Orchestration Layer)&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="390" x="415" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-19" parent="StifRaOV8h67si_LvdgK-18" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt; • Metadata Driven Pipeline&amp;nbsp;&lt;br&gt;• Incremental Loading&amp;nbsp;&lt;br&gt;• Scheduling&amp;nbsp;(2 AM Daily)&lt;br&gt;• Error Handling&amp;nbsp;&lt;br&gt;• Logging &lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;• Retry Mechanism&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;• Parameterized Pipelines&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="280" x="63" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-20" edge="1" parent="1" source="StifRaOV8h67si_LvdgK-30" style="endArrow=classic;html=1;rounded=0;exitX=0.456;exitY=-0.016;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="580" y="820" as="sourcePoint" />
+            <mxPoint x="490" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-21" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Azure Databricks&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;(Processing Layer)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="390" x="415" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-22" parent="StifRaOV8h67si_LvdgK-21" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt; • PySpark                                         &amp;nbsp;&lt;br&gt;• Delta Lake&amp;nbsp;&lt;br&gt;• Data Validation&lt;br&gt;• Data Cleansing&amp;nbsp;&lt;br&gt;• Delta MERGE &lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;• SCD Type 2&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="280" x="65" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-23" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="510" y="1120" as="sourcePoint" />
+            <mxPoint x="510" y="1180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-24" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Azure Synapse Analytics&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;(Serving Layer)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="390" x="410" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-25" parent="StifRaOV8h67si_LvdgK-24" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt; • Enterprise Data Warehouse                                         &amp;nbsp;&lt;br&gt;• Star Schema&amp;nbsp;&lt;br&gt;• Fact &amp;amp; Dimension Tables&lt;br&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="280" x="63" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-26" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Power BI&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;(Presentation Layer)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="390" x="415" y="2080" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-27" parent="StifRaOV8h67si_LvdgK-26" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt; • Executive Dashboard                                         &amp;nbsp;&lt;br&gt;• Energy Dashboard&amp;nbsp;&lt;br&gt;• Revenue Dashboard&lt;br&gt;• Weather Dashboard &amp;nbsp;&lt;br&gt;• Regional Dashboard&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="280" x="63" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-28" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="1460" />
+            </Array>
+            <mxPoint x="600" y="1410" as="sourcePoint" />
+            <mxPoint x="600" y="1480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-29" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="602" y="1710" as="sourcePoint" />
+            <mxPoint x="602" y="1770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-30" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Azure Key Vault&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="270" x="295" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-31" parent="StifRaOV8h67si_LvdgK-30" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&amp;nbsp;• SQL Credentials&amp;nbsp;&lt;div&gt;&amp;nbsp;• API Keys&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;• Storage Secrets&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;• Service Principal&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="155" x="55" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-33" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Metadata Database&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="270" x="730" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-34" parent="StifRaOV8h67si_LvdgK-33" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&amp;nbsp;• pipeline_config&amp;nbsp;&lt;div&gt;&amp;nbsp;• watermark&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;• pipeline_run&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;• audit_log&lt;/div&gt;&lt;div&gt;• schema_registry&lt;/div&gt;&lt;div&gt;• file_tracker&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="155" x="55" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-35" edge="1" parent="1" source="StifRaOV8h67si_LvdgK-33" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="760" y="957" as="sourcePoint" />
+            <mxPoint x="750" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-37" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.473;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;" target="StifRaOV8h67si_LvdgK-26" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="600" y="2000" as="sourcePoint" />
+            <mxPoint x="590" y="2090" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-38" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFFFFF;startSize=50;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Azure Monitor&lt;/font&gt;" vertex="1">
+          <mxGeometry height="210" width="295" x="910" y="2390" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-39" parent="StifRaOV8h67si_LvdgK-38" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt; • Pipeline Monitoring                                         &amp;nbsp;&lt;br&gt;• Job Monitoring &lt;br&gt;• Alerts&lt;br&gt;• Metrics&amp;nbsp;&lt;br&gt;• Diagnostic Logs&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="175" x="45" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-46" edge="1" parent="1" source="StifRaOV8h67si_LvdgK-42" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="670" y="2530" as="sourcePoint" />
+            <mxPoint x="1070" y="2600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-47" edge="1" parent="1" source="StifRaOV8h67si_LvdgK-44" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="1160" y="2740" as="sourcePoint" />
+            <mxPoint x="1160" y="2600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-48" edge="1" parent="1" source="StifRaOV8h67si_LvdgK-41" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="StifRaOV8h67si_LvdgK-38" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="480" y="2719" as="sourcePoint" />
+            <mxPoint x="460" y="2600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-54" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="60" width="290" x="940" y="2750" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-44" parent="StifRaOV8h67si_LvdgK-54" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="290" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-41" parent="StifRaOV8h67si_LvdgK-54" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;ADF&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-42" parent="StifRaOV8h67si_LvdgK-54" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Databricks&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="100" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="StifRaOV8h67si_LvdgK-43" parent="StifRaOV8h67si_LvdgK-54" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Synapse&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="200" y="15" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
