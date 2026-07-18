@@ -1,0 +1,5 @@
+-- SELECT VERSION();
+
+-- SHOW DATABASES;
+
+CREATE DATABASE energy_source_db;
